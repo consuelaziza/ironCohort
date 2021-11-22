@@ -31,11 +31,10 @@ app.use(helmet());
 const index = require("./routes/index");
 app.use("/", index);
 const authRoute = require("./routes/auth");
-app.use("/api/auth", authRoute);
-const userRoute = require("./routes/users");
-app.use("/api/users", userRoute);
-const postRoute = require("./routes/posts");
-app.use("/api/posts", postRoute);
+app.use("/", authRoute);
+
+// const postRoute = require("./routes/posts");
+// app.use("/", postRoute);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
