@@ -1,15 +1,20 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
+require("./User");
 
-const PostSchema = new mongoose.Schema(
+const PostSchema = new Schema(
   {
     userId: {
-      type: String,
-      required: true,
+      type: Schema.Types.ObjectId,
+      ref: 'User',
     },
+    title: {
+       type: String
+    },
+
     desc: {
       type: String,
       max: 500,
-    },
+    }, 
     img: {
       type: String,
     },
@@ -20,5 +25,5 @@ const PostSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-module.exports = mongoose.model("Post", PostSchema);
+const Post = model("Post", PostSchema)
+module.exports = Post;
