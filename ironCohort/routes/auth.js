@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const uploader = require("../middleware/cloudinary")
 
 
 // Handles GET requests to /signin and shows a form
@@ -119,6 +120,20 @@ router.get('/logout', (req, res, next) => {
   req.session.destroy()
   res.redirect('/')
 })
+
+router.post("/upload", checkLogIn, uploader.single("image"),(req, res, next) => {
+  console.log(req.file);
+  User.findByIdAndUpdate(req.session.myProperty._id, {
+    profilePicture: req.file.path,
+  })
+    .then(() => {
+      res.redirect("profile");
+    })
+    .catch((err) => {
+      console.log("Image failed to upload", err);
+    });
+}
+);
 
 module.exports = router;
 
