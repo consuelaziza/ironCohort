@@ -21,10 +21,12 @@ router.get('/:id/edit', (req, res, next) => {
   // POST '/movies/:id/edit' route to edit the movie
   router.post('/:id/edit', (req, res, next) => {
     const { id } = req.params
-    const { title, genre, plot, cast } = req.body
+    const { userId, title, desc, img } = req.body
     
-    Movie.findByIdAndUpdate(id, { title, genre, plot, cast })
-    .then( () => res.redirect(`/movies/${id}`))
+    User.findByIdAndUpdate(id, { userId, title, desc, img })
+    .then( () => res.redirect(`/profile/${id}`))
     .catch( (err) => next(err));
   })
   
+
+  // about/editProfile.hbs
