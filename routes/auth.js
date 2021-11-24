@@ -109,6 +109,7 @@ router.get('/profile', checkLogIn, (req, res, next) => {
   let id = req.session.myProperty._id 
   User.findById(id)
     .then((myUserInfo) => {
+      console.log(myUserInfo)
       res.render('auth/profile.hbs', {myUserInfo})
     })
     .catch((err) => {
