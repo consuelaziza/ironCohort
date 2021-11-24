@@ -55,6 +55,9 @@ app.use("/", postRoute);
 const feedRoute = require("./routes/feed");
 app.use("/", feedRoute);
 
+const profileRoute = require("./routes/auth");
+app.use("/", profileRoute);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

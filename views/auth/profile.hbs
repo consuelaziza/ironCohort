@@ -1,13 +1,4 @@
  {{> Topbar}}
-
-<form action="/upload" method="POST" enctype="multipart/form-data">
-  <label for="image"> Add your image!</label>
-  <input type="file" name="image" accept="image/png image/jpg" />
-  <button type="submit">Add Pic</button>
-</form>
-           
-
-
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
    <div class="row">
@@ -414,7 +405,7 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Gabrielle Bunton</b>
@@ -448,4 +439,52 @@
       </div>
    </div>
 </div>
+<!-- begin -->
+<div class="container" id="profile-photos">
+  <h2>Image Gallery</h2>
+  <p>The .thumbnail class can be used to display an image gallery.</p>
+  <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>
+  <p>Click on the images to enlarge them.</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/lights.jpg" target="_blank">
+          <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/nature.jpg" target="_blank">
+          <img src="/w3images/nature.jpg" alt="Nature" style="width:50%">
+          <div class="caption">
+           
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/fjords.jpg" target="_blank">
+          <img src="/w3images/fjords.jpg" alt="Fjords" style="width:50%">
+          <div class="caption">
+            
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+
+</div>
+
+           
+
+
+
 
