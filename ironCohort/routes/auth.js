@@ -107,7 +107,8 @@ res.redirect('/')
 }
 router.get('/profile', checkLogIn, (req, res, next) => {
   let myUserInfo = req.session.myProperty  
-  res.render('auth/profile.hbs', {name: myUserInfo.username})
+  console.log(myUserInfo)
+  res.render('auth/profile.hbs', {myUserInfo})
 })
 
 router.get('/search', checkLogIn, (req, res, next) => {
@@ -122,7 +123,7 @@ router.get('/logout', (req, res, next) => {
 })
 
 router.post("/upload", checkLogIn, uploader.single("image"),(req, res, next) => {
-  console.log(req.file);
+  console.log();
   User.findByIdAndUpdate(req.session.myProperty._id, {
     profilePicture: req.file.path,
   })

@@ -1,23 +1,6 @@
  {{> Topbar}}
-{{!-- 
-<p>Hello {{name}} , welcome to your site</p>
 
-<form method="POST" action="/post">
-  <div class="mb-3">
-    <label class="form-label" >Title</label>
-    <input class="form-control" type="text" name="title">
-    <br>
-    <label class="form-label" >Description</label>
-    <input class="form-control" type="text" name="desc">
-    <br>
-    <button class="btn btn-primary" type="submit">SUBMIT</button>
-  </div>
-</form> --}}
-<form action="/upload" method="POST" enctype="multipart/form-data">
-  <label for="image"> Add your image!</label>
-  <input type="file" name="image" accept="image/png image/jpg" />
-  <button type="submit">Add Pic</button>
-</form>
+
 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -35,7 +18,7 @@
                   <div class="profile-header-content">
                      <!-- BEGIN profile-header-img -->
                      <div class="profile-header-img">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+                        <img  src={{myUserInfo.profilePicture}} alt="profile pic" /> 
                      </div>
                      <!-- END profile-header-img -->
                      <!-- BEGIN profile-header-info -->
