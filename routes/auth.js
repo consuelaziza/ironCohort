@@ -106,9 +106,15 @@ res.redirect('/')
 }
 }
 router.get('/profile', checkLogIn, (req, res, next) => {
-  let myUserInfo = req.session.myProperty  
-  console.log(myUserInfo)
-  res.render('auth/profile.hbs', {myUserInfo})
+  let id = req.session.myProperty._id 
+  User.findById(id)
+    .then((myUserInfo) => {
+      res.render('auth/profile.hbs', {myUserInfo})
+    })
+    .catch((err) => {
+      next(err)
+    })
+  
 })
 
 router.get('/search', checkLogIn, (req, res, next) => {
@@ -128,7 +134,7 @@ router.post("/upload", checkLogIn, uploader.single("image"),(req, res, next) => 
     profilePicture: req.file.path,
   })
     .then(() => {
-      res.redirect("profile");
+      res.redirect("/profile");
     })
     .catch((err) => {
       console.log("Image failed to upload", err);
