@@ -1,0 +1,10 @@
+ {{> Topbar}}
+ <h2>Post Feed</h2>
+
+<ul>
+  {{#each allPosts}}
+      <li>{{ this.title }}</li>
+      <li>{{ this.img }}</li>
+  {{/each}}
+</ul>
+<hr>
