@@ -22,7 +22,7 @@ const User = require("../models/User");
 
 
 
-// Handles POST requests to `/todos/create`
+// Handles POST requests to `/posts/create`
 router.post('/post', (req, res, next) => {
   //all the form data will be available inside req.body
   console.log(  req.body )

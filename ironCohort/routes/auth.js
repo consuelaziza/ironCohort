@@ -114,7 +114,7 @@ router.get('/search', checkLogIn, (req, res, next) => {
 })
 
 router.get('/logout', (req, res, next) => {
-  // Deletes the session
+  // Deletes the se
   // this will also automatically delete the session from the DB
   req.session.destroy()
   res.redirect('/')
