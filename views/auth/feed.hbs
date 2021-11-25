@@ -1,15 +1,45 @@
  {{> Topbar}}
- <h2>Post Feed</h2>
-<div>
-<ul>
+
+
+
+<form method="POST" action="/post" class="row g-3">
+  <div class="col-md-12">
+    <label for="inputEmail4" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" placeholder="Title">
+  </div>
+  <div class="col-md-12">
+    <label for="inputPassword4" class="form-label">Description</label>
+    <input type="text" class="form-control" name="desc" placeholder="What's on your mind?">
+  </div>
+   </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Post</button>
+  </div>
+</form>
+<div class="feedWrapper">
+<div class="feed">
+
   {{#each allPosts}}
-      <li>{{ this.title }}</li>
-      <li>{{ this.img }}</li>
+  <h4> {{ this.title }}</h4>
+ 
+      <h6>{{this.desc}}</h6>
+      
+  <form action="/post/{{this._id}}/delete" method="GET">
+  <button class="btn btn-danger">Delete</button>
+</form>
+
+<form action="/post/{{this._id}}/edit" method="GET">
+  <button type="submit" class="btn btn-warning">Edit</button>
+</form>
+    
+
   {{/each}}
-</ul>
-{{!-- {{#each allPosts}}
+
 </div>
-<hr>
+</div>
+{{!-- {{#each allPosts}} - --}}
+
+{{!-- <hr>
 <div class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -19,7 +49,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>{{this.desc}}.</p>
+        <p>{{this.desc}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

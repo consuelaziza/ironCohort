@@ -9,27 +9,7 @@ router.get('/post', (req, res, next) => {
     res.render('auth/create-post.hbs')
 })
 
-// router.post("/post", (req, res, next) => {
-//   //all the form data will be available inside req.body
-//   console.log(  req.body )
-//   const {title, description} = req.body
-//   //Insert the title and description in the DB
-//   //IMPORT YOUR Post model AT THE TOP OF THE FILE
-//   Post.create({title, description})
-//       .then(() => {
-//           //redirect the user to home page
-//           // redirects it to a certain url path
-//           res.redirect("/")
-//       })
-//       .catch(() => {
-//           next('Post creation failed')
-//       })
-// });
-
-
-
-
-// Handles POST requests to `/posts/create`
+// Handles POST requests to '/post'
 router.post('/post', (req, res, next) => {
   //all the form data will be available inside req.body
   console.log(  req.body )
@@ -65,14 +45,14 @@ router.get('/post/:postId', (req, res, next) => {
     
 })
 
-// Handles GET requests to `/todos/235y38sdf23423/edit
+// Handles GET requests to `/post/235y38sdf23423/edit
 router.get('/post/:postId/edit', (req, res, next) => {
     const {postId} = req.params
 
     Post.findById(postId)
         .then((post) => {
             //render some HBS file with that todo information
-            res.render('auth/create-post.hbs', {post})
+            res.render('auth/edit-post.hbs', {post})
         })
         .catch(() => {
             next('Single post fetch failed')
@@ -84,15 +64,16 @@ router.get('/post/:postId/edit', (req, res, next) => {
 router.post('/post/:postId/edit', (req, res, next) => {
 
     //We get this information from the form that the user submits
-    const {title, description} = req.body
+    const {title, desc} = req.body
+    console.log(req.body)
 
     // we grab the dynamic id from the url
     const {postId} = req.params
 
     // Find that specific todo by id and update it
-    TodoModel.findByIdAndUpdate(postId, {title, description})
+   Post.findByIdAndUpdate(postId, {title, desc})
         .then(() => {
-            res.redirect('/')
+            res.redirect('/feed')
         })
         .catch(() => {
             next('Post Edit failed')
@@ -109,7 +90,7 @@ router.get('/post/:postId/delete', (req, res, next) => {
     Post.findByIdAndDelete(postId)
         .then(() => {
             //then send the user to the home page
-            res.redirect('/')
+            res.redirect('/feed')
         })
         .catch(() => {
             next('Post delete failed')
