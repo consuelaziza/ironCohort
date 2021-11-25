@@ -765,7 +765,7 @@ body{
 }
 
 .profile-header .profile-header-cover {
-  background-image: url(https://via.placeholder.com/600x100/);
+  background-image: url();
   background-size: cover;
   background-position: center;
   background-repeat: repeat-x;
@@ -810,7 +810,7 @@ body{
 
 .profile-header-info h4 {
   font-weight: 500;
-  color: #fff
+  color: black
 }
 
 .profile-header-img+.profile-header-info {
@@ -1213,4 +1213,8 @@ body.flat-black {
     border: 0;
     margin-bottom: 1rem;
 }
+
+
+
+
 

@@ -110,7 +110,18 @@ router.get('/profile', checkLogIn, (req, res, next) => {
   User.findById(id)
     .then((myUserInfo) => {
       console.log(myUserInfo)
-      res.render('auth/profile.hbs', {myUserInfo})
+      User.find()
+        .then((allusers) => {
+          let friends = allusers.filter((singleUser) => {
+            return singleUser.email !== myUserInfo.email
+          })
+          console.log(friends)
+          res.render('auth/profile.hbs', {myUserInfo, friends})
+        })
+        .catch((err) => {
+          next(err)
+        })
+      
     })
     .catch((err) => {
       next(err)
