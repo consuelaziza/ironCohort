@@ -23,7 +23,7 @@
   <h4> {{ this.title }}</h4>
  
       <h6>{{this.desc}}</h6>
-      
+      <div class="btn-group">
   <form action="/post/{{this._id}}/delete" method="GET">
   <button class="btn btn-danger">Delete</button>
 </form>
@@ -31,7 +31,7 @@
 <form action="/post/{{this._id}}/edit" method="GET">
   <button type="submit" class="btn btn-warning">Edit</button>
 </form>
-    
+    </div>
 
   {{/each}}
 

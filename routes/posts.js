@@ -22,7 +22,7 @@ router.post('/post', (req, res, next) => {
           //redirect the user to home page
 
           // redirects it to a certain url path
-          res.redirect('/profile')
+          res.redirect('/feed')
       })
       .catch(() => {
           next('Post creation failed')
@@ -51,7 +51,7 @@ router.get('/post/:postId/edit', (req, res, next) => {
 
     Post.findById(postId)
         .then((post) => {
-            //render some HBS file with that todo information
+            //render some HBS file with that post information
             res.render('auth/edit-post.hbs', {post})
         })
         .catch(() => {

@@ -58,6 +58,9 @@ app.use("/", feedRoute);
 const profileRoute = require("./routes/auth");
 app.use("/", profileRoute);
 
+const editProfileRoute = require("./routes/editProfile");
+app.use("/", editProfileRoute);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

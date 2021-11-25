@@ -19,24 +19,54 @@
                      <!-- END profile-header-img -->
                      <!-- BEGIN profile-header-info -->
                      <div class="profile-header-info">
-                        <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
-                        <p class="m-b-10">UXUI + Frontend Developer</p>
-                        <a href="../about/editProfile.hbs" class="btn btn-xs btn-yellow">Edit Profile</a>
-                     </div>
+                        <h4 class="m-t-10 m-b-5">{{myUserInfo.username}}</h4>
+                        <form action="/post/{{this._id}}/edit" method="GET">
+                        <a href="edit-profile" class="btn btn-xs btn-yellow">Edit Profile</a>
+                        </form>
+                        
+                        
+                     
                      <!-- END profile-header-info -->
                   </div>
                   <!-- END profile-header-content -->
                   <!-- BEGIN profile-header-tab -->
-                  <ul class="profile-header-tab nav nav-tabs">
+                  {{!-- <ul class="profile-header-tab nav nav-tabs">
                      <li class="nav-item"><a href="feed" class="nav-link" data-toggle="tab">POSTS</a></li>
                      <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab">ABOUT</a></li>
                      <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a></li>
-                     <li class="nav-item"><a href="#profile-videos" class="nav-link" data-toggle="tab">VIDEOS</a></li>
                      <li class="nav-item"><a href="#profile-friends" class="nav-link active show" data-toggle="tab">FRIENDS</a></li>
-                  </ul>
+                  </ul> --}}
                   <!-- END profile-header-tab -->
                </div>
             </div>
+            </div>
+{{!--             
+                     <div class="input-group mb-3">
+  <label class="input-group-text" for="image">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01" accept="image/png image/jpg" >
+</div> --}}
+<ul class="profile-header-tab nav nav-tabs">
+                     <li class="nav-item"><a href="feed" class="nav-link" data-toggle="tab">POSTS</a></li>
+                     <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab">ABOUT</a></li>
+                     <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a></li>
+                     <li class="nav-item"><a href="#profile-friends" class="nav-link active show" data-toggle="tab">FRIENDS</a></li>
+                  </ul>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+<div class="fs-6">
+  <div class="input-group mb-3" >
+  <label class="input-group-text" for="image"><button class="loginButton" type="submit" class="fs-6">Upload</button></label>
+  <input type="file" class="form-control" class="loginButton" id="inputGroupFile01" name="image" accept="image/png image/jpg" >
+</div>
+</div>
+</form>
+
+{{!-- <form action="/upload" method="POST" enctype="multipart/form-data">
+  <label for="image"> Add your image!</label>
+  <input type="file" name="image" accept="image/png image/jpg" />
+  <button type="submit">Add Pic</button>
+</form> --}}
+
             <!-- end profile -->
             <!-- begin profile-content -->
             <div class="profile-content">
@@ -52,22 +82,14 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">James Pittman</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
                                     <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-expanded="false"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(101px, 34px, 0px);">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
-                                       </ul>
+                                       
                                     </div>
                                  </div>
                               </div>
@@ -79,21 +101,13 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Mitchell Ashcroft</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                    
                                        </ul>
                                     </div>
                                  </div>
@@ -106,21 +120,13 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
-                                    <b class="text-inverse">Ella Cabena</b>
+                                    <b class="text-inverse">Consuel Vlek</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle" aria-expanded="false"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(101px, -2px, 0px);">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                    
                                        </ul>
                                     </div>
                                  </div>
@@ -133,21 +139,13 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Declan Dyson</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                    
                                        </ul>
                                     </div>
                                  </div>
@@ -160,21 +158,13 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">George Seyler</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                    
                                        </ul>
                                     </div>
                                  </div>
@@ -187,21 +177,13 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Patrick Musgrove</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                    
                                        </ul>
                                     </div>
                                  </div>
@@ -214,21 +196,13 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Taj Connal</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                    
                                        </ul>
                                     </div>
                                  </div>
@@ -241,21 +215,14 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Laura Pollock</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
                                     <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                      
                                        </ul>
                                     </div>
                                  </div>
@@ -268,21 +235,12 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Dakota Mannix</b>
                                  </div>
-                                 <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                 
                                        </ul>
                                     </div>
                                  </div>
@@ -295,21 +253,12 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Timothy Woolley</b>
                                  </div>
-                                 <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
+                                 
                                        </ul>
                                     </div>
                                  </div>
@@ -322,22 +271,12 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Benjamin Congreve</b>
                                  </div>
-                                 <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
-                                       </ul>
+                                 
                                     </div>
                                  </div>
                               </div>
@@ -349,22 +288,15 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Mariam Maddock</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
-                                       </ul>
+  
+                                       
+                                       
                                     </div>
                                  </div>
                               </div>
@@ -376,22 +308,12 @@
                            <div class="p-10 bg-white">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
-                                 {{!-- <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="media-object img-circle"> --}}
+                                 <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="media-object img-circle">
                                  </a>
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">Blake Gerrald</b>
                                  </div>
-                                 <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
-                                       </ul>
+                                 
                                     </div>
                                  </div>
                               </div>
@@ -411,17 +333,7 @@
                                     <b class="text-inverse">Gabrielle Bunton</b>
                                  </div>
                                  <div class="media-body valign-middle text-right overflow-visible">
-                                    <div class="btn-group dropdown">
-                                       <a href="javascript:;" class="btn btn-default">Friends</a>
-                                       <a href="javascript:;" data-toggle="dropdown" class="btn btn-default dropdown-toggle"></a>
-                                       <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="javascript:;">Action 1</a></li>
-                                          <li><a href="javascript:;">Action 2</a></li>
-                                          <li><a href="javascript:;">Action 3</a></li>
-                                          <li class="divider"></li>
-                                          <li><a href="javascript:;">Action 4</a></li>
-                                       </ul>
-                                    </div>
+                                    
                                  </div>
                               </div>
                            </div>
@@ -440,22 +352,3 @@
    </div>
 </div>
 <!-- begin -->
-<!-- begin tab-content -->
-               <div class=“tab-content p-0”>
-                  <!-- begin #profile-friends tab -->
-                  <div class=“tab-pane fade in active show” id=“profile-photo”>
-                     <h4 class=“m-t-0 m-b-20">Image Gallery</h4>
-                     <!-- begin row -->
-                     <div class=“row row-space-2”>
-                        <!-- begin col-6 -->
-                        <div class=“col-md-6 m-b-2">
-                           <div class=“p-10 bg-white”>
-                              <div class=“media media-xs overflow-visible”>
-                                 <div class=“media-body valign-middle”>
-                                 </div>
-                                 <div class=“media-body valign-middle text-right overflow-visible”>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- end col-6 -->
