@@ -58,11 +58,11 @@
                <div class="tab-content p-0">
                   <!-- begin #profile-friends tab -->
                   <div class="tab-pane fade in active show" id="profile-friends">
-                     <h4 class="m-t-0 m-b-20">Friend List </h4>
+                     <h4 class="m-t-0 m-b-20">Cohort List </h4>
                      {{#each friends}}
                         <!-- begin col-6 -->
-                        <div class="col-md-6 m-b-2">
-                           <div class="p-10 bg-white">
+                         <div class="col-md-6 m-b-2">
+                           <div class="p-10 bg-white ">
                               <div class="media media-xs overflow-visible">
                                  <a class="media-left" href="javascript:;">
                                  <img src="{{this.profilePicture}}" alt="" class="media-object img-circle">
@@ -70,14 +70,19 @@
                                  <div class="media-body valign-middle">
                                     <b class="text-inverse">{{this.username}}</b>
                                  </div>
+                                
                                  <div class="media-body valign-middle text-right overflow-visible">
                                     
                                        </ul>
                                     </div>
+                                    
                                  </div>
+
                               </div>
                            </div>
                         </div>
+                        </div>
+                        
                         <!-- end col-6 -->
                     {{/each}}
                        
@@ -85,12 +90,5 @@
                      <!-- end row -->
                   </div>
                   <!-- end #profile-friends tab -->
-               </div>
-               <!-- end tab-content -->
-            </div>
-            <!-- end profile-content -->
-         </div>
-      </div>
-   </div>
-</div>
+                
 <!-- begin -->
